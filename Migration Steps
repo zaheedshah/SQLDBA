@@ -1,0 +1,16 @@
+steps
+
+1) take full and transaction log backup of source server
+2) configure the log shipping with stand by mode from source to destination server
+3) on the migration day
+    a) run and then stop the job backup job
+    b) run and then stop the copy and restor job
+    c) restore the last transaction llog with Recovery
+
+4) generat the scripts all jobs from source server and run on destination server
+5)run the sp_servlogin (microsofte script on source server)
+6)copy the out put of the sp_servlogin and run on Destination server
+7) find the orphane users and fixed it
+8) Generate and configure any link server, dbmirroring...etc
+9) and in the last change the compability level
+
